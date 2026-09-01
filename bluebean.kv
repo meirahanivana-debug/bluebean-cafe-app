@@ -1,0 +1,376 @@
+#:import dp kivy.metrics.dp
+
+<BlueButton@Button>:
+    background_color: 0, 0, 0, 0
+    color: 0.04, 0.10, 0.17, 1
+    font_size: "12sp"
+    bold: True
+    canvas.before:
+        Color:
+            rgba: 0.97, 0.97, 0.97, 1
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(7)]
+
+
+<LoginScreen>:
+    name: "login"
+
+    canvas.before:
+        Color:
+            rgba: 0.025, 0.085, 0.15, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+
+        Label:
+            text: "Bluebean"
+            font_size: "27sp"
+            italic: True
+            bold: True
+            color: 1, 1, 1, 1
+            size_hint: None, None
+            size: dp(180), dp(40)
+            pos_hint: {"center_x": 0.5, "top": 0.91}
+
+        Label:
+            text: "C A F E"
+            font_size: "7sp"
+            color: 0.78, 0.82, 0.86, 1
+            size_hint: None, None
+            size: dp(80), dp(18)
+            pos_hint: {"center_x": 0.5, "top": 0.855}
+
+        Label:
+            text: "Selamat Datang!"
+            font_size: "17sp"
+            bold: True
+            color: 1, 1, 1, 1
+            size_hint: None, None
+            size: dp(220), dp(30)
+            pos_hint: {"center_x": 0.5, "top": 0.785}
+
+        Label:
+            text: "Silahkan masuk untuk melanjutkan"
+            font_size: "8sp"
+            color: 0.72, 0.77, 0.82, 1
+            size_hint: None, None
+            size: dp(240), dp(22)
+            pos_hint: {"center_x": 0.5, "top": 0.748}
+
+
+        Label:
+            text: "✉"
+            font_size: "13sp"
+            color: 1, 1, 1, 1
+            size_hint: None, None
+            size: dp(25), dp(25)
+            pos_hint: {"x": 0.145, "top": 0.665}
+
+        TextInput:
+            id: email
+            hint_text: "Email"
+            multiline: False
+            font_size: "9sp"
+            foreground_color: 1, 1, 1, 1
+            hint_text_color: 0.72, 0.76, 0.80, 1
+            background_color: 0.055, 0.13, 0.20, 1
+            cursor_color: 1, 1, 1, 1
+            padding: dp(34), dp(11)
+            size_hint: 0.76, None
+            height: dp(38)
+            pos_hint: {"x": 0.12, "top": 0.665}
+
+
+        Label:
+            text: "▣"
+            font_size: "12sp"
+            color: 1, 1, 1, 1
+            size_hint: None, None
+            size: dp(25), dp(25)
+            pos_hint: {"x": 0.145, "top": 0.595}
+
+        TextInput:
+            id: password
+            hint_text: "Kata Sandi"
+            password: True
+            multiline: False
+            font_size: "9sp"
+            foreground_color: 1, 1, 1, 1
+            hint_text_color: 0.72, 0.76, 0.80, 1
+            background_color: 0.055, 0.13, 0.20, 1
+            cursor_color: 1, 1, 1, 1
+            padding: dp(34), dp(11)
+            size_hint: 0.76, None
+            height: dp(38)
+            pos_hint: {"x": 0.12, "top": 0.595}
+
+        Button:
+            text: "◉"
+            font_size: "9sp"
+            background_color: 0, 0, 0, 0
+            color: 0.75, 0.80, 0.85, 1
+            size_hint: None, None
+            size: dp(25), dp(25)
+            pos_hint: {"x": 0.80, "top": 0.592}
+            on_release:
+                password.password = not password.password
+
+
+        Button:
+            text: "Lupa kata sandi?"
+            font_size: "8sp"
+            background_color: 0, 0, 0, 0
+            color: 0.76, 0.80, 0.84, 1
+            size_hint: None, None
+            size: dp(120), dp(22)
+            pos_hint: {"center_x": 0.5, "top": 0.535}
+
+
+        BlueButton:
+            text: "Masuk"
+            size_hint: 0.76, None
+            height: dp(40)
+            pos_hint: {"x": 0.12, "top": 0.49}
+            on_release:
+                root.manager.current = "home"
+
+
+        Label:
+            text: "Belum punya akun? Daftar Sekarang"
+            font_size: "8sp"
+            color: 0.76, 0.80, 0.84, 1
+            size_hint: None, None
+            size: dp(230), dp(22)
+            pos_hint: {"center_x": 0.5, "top": 0.425}
+
+
+        Widget:
+            size_hint: 1, None
+            height: dp(155)
+            pos_hint: {"x": 0, "y": 0}
+            canvas:
+                Color:
+                    rgba: 0.055, 0.12, 0.18, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+
+        Widget:
+            size_hint: None, None
+            size: dp(210), dp(105)
+            pos_hint: {"center_x": 0.5, "y": 0.015}
+            canvas:
+                Color:
+                    rgba: 0.34, 0.22, 0.12, 1
+                Ellipse:
+                    pos: self.pos
+                    size: self.size
+
+
+        Widget:
+            size_hint: None, None
+            size: dp(170), dp(70)
+            pos_hint: {"center_x": 0.5, "y": 0.055}
+            canvas:
+                Color:
+                    rgba: 0.12, 0.08, 0.055, 1
+                Ellipse:
+                    pos: self.pos
+                    size: self.size
+
+
+        Widget:
+            size_hint: None, None
+            size: dp(120), dp(45)
+            pos_hint: {"center_x": 0.5, "y": 0.09}
+            canvas:
+                Color:
+                    rgba: 0.78, 0.62, 0.40, 1
+                Ellipse:
+                    pos: self.pos
+                    size: self.size
+
+
+<HomeScreen>:
+    name: "home"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(10)
+
+        Label:
+            text: "Good Coffee, Good Vibes"
+            font_size: "20sp"
+            bold: True
+
+        Label:
+            text: "Menu Favorit: Bluebean Latte"
+
+        Button:
+            text: "Lihat Detail Produk"
+            size_hint_y: None
+            height: dp(45)
+            on_release:
+                root.manager.current = "detail"
+
+        GridLayout:
+            cols: 3
+            size_hint_y: None
+            height: dp(50)
+            spacing: dp(5)
+
+            Button:
+                text: "Home"
+
+            Button:
+                text: "Keranjang"
+                on_release:
+                    root.manager.current = "cart"
+
+            Button:
+                text: "Profile"
+                on_release:
+                    root.manager.current = "profile"
+
+
+<DetailScreen>:
+    name: "detail"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+
+        Label:
+            text: "Detail Produk"
+            font_size: "22sp"
+            bold: True
+            size_hint_y: None
+            height: dp(40)
+
+        Label:
+            text: "Bluebean Latte\\nRp. 28.000\\n\\nPerpaduan espresso dan susu segar"
+            halign: "center"
+
+        Button:
+            text: "Tambah ke Keranjang"
+            size_hint_y: None
+            height: dp(50)
+            on_release:
+                root.manager.current = "cart"
+
+        Button:
+            text: "< Kembali ke Home"
+            size_hint_y: None
+            height: dp(40)
+            on_release:
+                root.manager.current = "home"
+
+
+<ProfileScreen>:
+    name: "profile"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+
+        Label:
+            text: "Profil User"
+            font_size: "22sp"
+            bold: True
+            size_hint_y: None
+            height: dp(40)
+
+        Label:
+            text: "User\\nuser@gmail.com"
+            halign: "center"
+
+        Button:
+            text: "Keluar (Logout)"
+            size_hint_y: None
+            height: dp(45)
+            on_release:
+                root.manager.current = "login"
+
+        Button:
+            text: "Kembali ke Home"
+            size_hint_y: None
+            height: dp(45)
+            on_release:
+                root.manager.current = "home"
+
+
+<CartScreen>:
+    name: "cart"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+
+        Label:
+            text: "Keranjang Belanja"
+            font_size: "22sp"
+            bold: True
+            size_hint_y: None
+            height: dp(40)
+
+        Label:
+            text: "1x Bluebean Latte - Rp. 28.000\\n2x Matcha Latte - Rp. 54.000\\nTotal: Rp. 114.000"
+
+        Button:
+            text: "Bayar Sekarang"
+            size_hint_y: None
+            height: dp(50)
+            on_release:
+                root.manager.current = "checkout"
+
+        Button:
+            text: "< Kembali"
+            size_hint_y: None
+            height: dp(40)
+            on_release:
+                root.manager.current = "home"
+
+
+<CheckoutScreen>:
+    name: "checkout"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+
+        Label:
+            text: "Pesanan Berhasil!"
+            font_size: "24sp"
+            bold: True
+            size_hint_y: None
+            height: dp(50)
+
+        Label:
+            text: "No. Pesanan: #BBB243512\\nTotal: Rp. 114.000\\nEstimasi Pengiriman: 15-20 Menit"
+            halign: "center"
+
+        Button:
+            text: "Kembali ke Home"
+            size_hint_y: None
+            height: dp(50)
+            on_release:
+                root.manager.current = "home"
+
+
+ScreenManager:
+    LoginScreen:
+    HomeScreen:
+    DetailScreen:
+    ProfileScreen:
+    CartScreen:
+    CheckoutScreen:
