@@ -1,18 +1,24 @@
 #:import dp kivy.metrics.dp
 
+ScreenManager:
+    LoginScreen:
+    HomeScreen:
+    DetailScreen:
+    ProfileScreen:
+    CartScreen:
+    CheckoutScreen:
+
 <BlueButton@Button>:
     background_color: 0, 0, 0, 0
-    color: 0.04, 0.10, 0.17, 1
-    font_size: "12sp"
-    bold: True
+    color: 0.05, 0.10, 0.16, 1
+    font_size: "11sp"
     canvas.before:
         Color:
-            rgba: 0.97, 0.97, 0.97, 1
+            rgba: 0.98, 0.98, 0.98, 1
         RoundedRectangle:
             pos: self.pos
             size: self.size
-            radius: [dp(7)]
-
+            radius: [dp(6)]
 
 <LoginScreen>:
     name: "login"
@@ -28,9 +34,9 @@
 
         Label:
             text: "Bluebean"
-            font_size: "27sp"
+            font_size: "25sp"
             italic: True
-            bold: True
+            bold: False
             color: 1, 1, 1, 1
             size_hint: None, None
             size: dp(180), dp(40)
@@ -38,15 +44,15 @@
 
         Label:
             text: "C A F E"
-            font_size: "7sp"
-            color: 0.78, 0.82, 0.86, 1
+            font_size: "6sp"
+            color: 0.85, 0.87, 0.89, 1
             size_hint: None, None
-            size: dp(80), dp(18)
+            size: dp(80), dp(15)
             pos_hint: {"center_x": 0.5, "top": 0.855}
 
         Label:
             text: "Selamat Datang!"
-            font_size: "17sp"
+            font_size: "15sp"
             bold: True
             color: 1, 1, 1, 1
             size_hint: None, None
@@ -55,145 +61,114 @@
 
         Label:
             text: "Silahkan masuk untuk melanjutkan"
-            font_size: "8sp"
+            font_size: "7sp"
             color: 0.72, 0.77, 0.82, 1
             size_hint: None, None
-            size: dp(240), dp(22)
-            pos_hint: {"center_x": 0.5, "top": 0.748}
-
-
-        Label:
-            text: "✉"
-            font_size: "13sp"
-            color: 1, 1, 1, 1
-            size_hint: None, None
-            size: dp(25), dp(25)
-            pos_hint: {"x": 0.145, "top": 0.665}
+            size: dp(250), dp(20)
+            pos_hint: {"center_x": 0.5, "top": 0.75}
 
         TextInput:
             id: email
-            hint_text: "Email"
+            hint_text: "user@gmail.com"
             multiline: False
-            font_size: "9sp"
+            font_size: "8sp"
             foreground_color: 1, 1, 1, 1
-            hint_text_color: 0.72, 0.76, 0.80, 1
-            background_color: 0.055, 0.13, 0.20, 1
+            hint_text_color: 0.70, 0.73, 0.76, 1
+            background_color: 0, 0, 0, 0
             cursor_color: 1, 1, 1, 1
-            padding: dp(34), dp(11)
-            size_hint: 0.76, None
-            height: dp(38)
-            pos_hint: {"x": 0.12, "top": 0.665}
+            padding: dp(32), dp(9)
+            size_hint: None, None
+            size: dp(156), dp(32)
+            pos_hint: {"center_x": 0.5, "top": 0.665}
 
+            canvas.before:
+                Color:
+                    rgba: 0.65, 0.70, 0.74, 1
+                Line:
+                    rounded_rectangle: self.x, self.y, self.width, self.height, dp(6)
+                    width: 1
 
         Label:
-            text: "▣"
-            font_size: "12sp"
+            text: "✉"
+            font_size: "9sp"
             color: 1, 1, 1, 1
             size_hint: None, None
-            size: dp(25), dp(25)
-            pos_hint: {"x": 0.145, "top": 0.595}
+            size: dp(20), dp(20)
+            pos_hint: {"center_x": 0.27, "top": 0.65}
 
         TextInput:
             id: password
-            hint_text: "Kata Sandi"
+            hint_text: "••••••••••"
             password: True
             multiline: False
-            font_size: "9sp"
+            font_size: "8sp"
             foreground_color: 1, 1, 1, 1
-            hint_text_color: 0.72, 0.76, 0.80, 1
-            background_color: 0.055, 0.13, 0.20, 1
+            hint_text_color: 0.70, 0.73, 0.76, 1
+            background_color: 0, 0, 0, 0
             cursor_color: 1, 1, 1, 1
-            padding: dp(34), dp(11)
-            size_hint: 0.76, None
-            height: dp(38)
-            pos_hint: {"x": 0.12, "top": 0.595}
+            padding: dp(32), dp(9)
+            size_hint: None, None
+            size: dp(156), dp(32)
+            pos_hint: {"center_x": 0.5, "top": 0.605}
+
+            canvas.before:
+                Color:
+                    rgba: 0.65, 0.70, 0.74, 1
+                Line:
+                    rounded_rectangle: self.x, self.y, self.width, self.height, dp(6)
+                    width: 1
+
+        Label:
+            text: "▣"
+            font_size: "9sp"
+            color: 1, 1, 1, 1
+            size_hint: None, None
+            size: dp(20), dp(20)
+            pos_hint: {"center_x": 0.27, "top": 0.59}
 
         Button:
             text: "◉"
-            font_size: "9sp"
+            font_size: "8sp"
             background_color: 0, 0, 0, 0
             color: 0.75, 0.80, 0.85, 1
             size_hint: None, None
-            size: dp(25), dp(25)
-            pos_hint: {"x": 0.80, "top": 0.592}
+            size: dp(20), dp(20)
+            pos_hint: {"center_x": 0.73, "top": 0.59}
             on_release:
                 password.password = not password.password
 
-
-        Button:
-            text: "Lupa kata sandi?"
-            font_size: "8sp"
-            background_color: 0, 0, 0, 0
-            color: 0.76, 0.80, 0.84, 1
-            size_hint: None, None
-            size: dp(120), dp(22)
-            pos_hint: {"center_x": 0.5, "top": 0.535}
-
-
         BlueButton:
             text: "Masuk"
-            size_hint: 0.76, None
-            height: dp(40)
-            pos_hint: {"x": 0.12, "top": 0.49}
+            size_hint: None, None
+            size: dp(156), dp(38)
+            pos_hint: {"center_x": 0.5, "top": 0.515}
             on_release:
                 root.manager.current = "home"
 
+        Button:
+            text: "Lupa kata sandi?"
+            font_size: "7sp"
+            background_color: 0, 0, 0, 0
+            color: 0.75, 0.79, 0.83, 1
+            size_hint: None, None
+            size: dp(120), dp(20)
+            pos_hint: {"center_x": 0.5, "top": 0.465}
 
         Label:
             text: "Belum punya akun? Daftar Sekarang"
-            font_size: "8sp"
-            color: 0.76, 0.80, 0.84, 1
+            font_size: "7sp"
+            color: 0.75, 0.79, 0.83, 1
             size_hint: None, None
-            size: dp(230), dp(22)
-            pos_hint: {"center_x": 0.5, "top": 0.425}
+            size: dp(220), dp(20)
+            pos_hint: {"center_x": 0.5, "top": 0.405}
 
-
-        Widget:
-            size_hint: 1, None
-            height: dp(155)
-            pos_hint: {"x": 0, "y": 0}
-            canvas:
-                Color:
-                    rgba: 0.055, 0.12, 0.18, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-
-
-        Widget:
+        Image:
+            source: "coffee.jpg"
+            allow_stretch: True
+            keep_ratio: False
             size_hint: None, None
-            size: dp(210), dp(105)
-            pos_hint: {"center_x": 0.5, "y": 0.015}
-            canvas:
-                Color:
-                    rgba: 0.34, 0.22, 0.12, 1
-                Ellipse:
-                    pos: self.pos
-                    size: self.size
-
-
-        Widget:
-            size_hint: None, None
-            size: dp(170), dp(70)
-            pos_hint: {"center_x": 0.5, "y": 0.055}
-            canvas:
-                Color:
-                    rgba: 0.12, 0.08, 0.055, 1
-                Ellipse:
-                    pos: self.pos
-                    size: self.size
-
-
-        Widget:
-            size_hint: None, None
-            size: dp(120), dp(45)
-            pos_hint: {"center_x": 0.5, "y": 0.09}
-            canvas:
-                Color:
-                    rgba: 0.78, 0.62, 0.40, 1
-                Ellipse:
-                    pos: self.pos
-                    size: self.size
+            size: dp(200), dp(160)
+            pos_hint: {"center_x": 0.5, "y": 0}
 
 
 <HomeScreen>:
@@ -251,8 +226,6 @@
             text: "Detail Produk"
             font_size: "22sp"
             bold: True
-            size_hint_y: None
-            height: dp(40)
 
         Label:
             text: "Bluebean Latte\\nRp. 28.000\\n\\nPerpaduan espresso dan susu segar"
@@ -285,8 +258,6 @@
             text: "Profil User"
             font_size: "22sp"
             bold: True
-            size_hint_y: None
-            height: dp(40)
 
         Label:
             text: "User\\nuser@gmail.com"
@@ -319,8 +290,6 @@
             text: "Keranjang Belanja"
             font_size: "22sp"
             bold: True
-            size_hint_y: None
-            height: dp(40)
 
         Label:
             text: "1x Bluebean Latte - Rp. 28.000\\n2x Matcha Latte - Rp. 54.000\\nTotal: Rp. 114.000"
@@ -352,8 +321,6 @@
             text: "Pesanan Berhasil!"
             font_size: "24sp"
             bold: True
-            size_hint_y: None
-            height: dp(50)
 
         Label:
             text: "No. Pesanan: #BBB243512\\nTotal: Rp. 114.000\\nEstimasi Pengiriman: 15-20 Menit"
@@ -364,13 +331,4 @@
             size_hint_y: None
             height: dp(50)
             on_release:
-                root.manager.current = "home"
-
-
-ScreenManager:
-    LoginScreen:
-    HomeScreen:
-    DetailScreen:
-    ProfileScreen:
-    CartScreen:
-    CheckoutScreen:
+                root.manager.current = "home" 
